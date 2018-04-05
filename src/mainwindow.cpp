@@ -920,6 +920,9 @@ bool MainWindow::openDltFile(QStringList fileNames)
     /* close existing file */
     bool ret = false;
 
+	// sort to maintain file order on drag and drop
+	std::sort(fileNames.begin(), fileNames.end());
+
     if(fileNames.size()==0)
         return false;
 
